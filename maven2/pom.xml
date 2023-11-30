@@ -4,11 +4,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.caucho</groupId>
-  <artifactId>hessian</artifactId>
-  <version>@VERSION@</version>
+  <artifactId>hessian-jakarta</artifactId>
+  <version>4.0.66</version>
   
   <packaging>jar</packaging>
-  <name>Hessian</name>
+  <name>Hessian for Jakarta EE 10</name>
   <description>Hessian is a compact binary protocol for connecting web services</description>
   <url>http://hessian.caucho.com</url>
 
@@ -28,19 +28,55 @@
       <organizationUrl>https://www.caucho.com</organizationUrl>
     </developer>
   </developers>
+
+  <properties>
+    <maven.compiler.release>11</maven.compiler.release>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <build>
+    <sourceDirectory>${project.basedir}/../src</sourceDirectory>
+
+    <resources>
+      <resource>
+        <directory>${project.basedir}/../src/META-INF</directory>
+        <targetPath>META-INF</targetPath>
+      </resource>
+    </resources>
+
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.11.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.3.0</version>
+          <configuration>
+            <archive>
+              <manifestFile>${project.basedir}/../src/manifest</manifestFile>
+            </archive>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
   
   <dependencies>
     <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>servlet-api</artifactId>
-      <version>2.5</version>
+      <groupId>jakarta.servlet</groupId>
+      <artifactId>jakarta.servlet-api</artifactId>
+      <version>6.0.0</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
   
   <scm>
-    <connection>scm:svn:svn://svn.caucho.com/home/svn/svnroot/resin/trunk/modules/hessian</connection>
-    <url>svn://svn.caucho.com/home/svn/svnroot/resin/trunk/modules/hessian</url>
+    <connection>scm:git:https://github.com/pnavato/hessian-jakarta</connection>
+    <url>https://github.com/pnavato/hessian-jakarta</url>
   </scm>
 </project>
 

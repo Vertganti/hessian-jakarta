@@ -48,8 +48,8 @@
 
 package com.caucho.services.server;
 
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletException;
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletException;
 
 /**
  * Interface for a service lifecycle.

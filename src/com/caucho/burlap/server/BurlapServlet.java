@@ -53,14 +53,14 @@ import com.caucho.burlap.io.BurlapOutput;
 import com.caucho.services.server.Service;
 import com.caucho.services.server.ServiceContext;
 
-import javax.servlet.GenericServlet;
-import javax.servlet.Servlet;
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.GenericServlet;
+import jakarta.servlet.Servlet;
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -168,7 +168,7 @@ public class BurlapServlet extends GenericServlet {
     HttpServletResponse res = (HttpServletResponse) response;
 
     if (! req.getMethod().equals("POST")) {
-      res.setStatus(500, "Burlap Requires POST");
+      res.setStatus(500);
       PrintWriter out = res.getWriter();
 
       res.setContentType("text/html");
