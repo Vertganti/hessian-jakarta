@@ -8,7 +8,7 @@
   <version>4.0.66</version>
   
   <packaging>jar</packaging>
-  <name>Hessian for Jakarta EE 10</name>
+  <name>Hessian for Jakarta EE</name>
   <description>Hessian is a compact binary protocol for connecting web services</description>
   <url>http://hessian.caucho.com</url>
 
@@ -61,8 +61,28 @@
             </archive>
           </configuration>
         </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-source-plugin</artifactId>
+          <version>3.3.0</version>
+          <executions>
+            <execution>
+              <id>attach-sources</id>
+              <goals>
+                <goal>jar-no-fork</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
       </plugins>
     </pluginManagement>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+      </plugin>
+    </plugins>
   </build>
   
   <dependencies>
