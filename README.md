@@ -1,10 +1,13 @@
 # hessian-jakarta
 This is an unofficial porting of the Java implementation of [Hessian](http://hessian.caucho.com/) to Jakarta EE 10; Jakarta EE 10 requires Java 11+.
+
 It is based on the source code of Hessian version 4.0.66 (actually the latest one), however note that versions 4.0.63 through 4.0.66 have no change in the source code.
+
 Before creating it, I quickly evaluated [some alternatives](https://www.alibabacloud.com/blog/an-introduction-and-comparison-of-several-common-java-serialization-frameworks_597900) but Hessian still seems the best in terms of ease of use.
 
 ## Maven
 Official Hessian releases are not built by Maven and the official source code does not follow the standard Maven directory layout, however it does provide a POM in the `maven2` folder.  I adapted that POM without changing the directory layout to keep the number of changes as small as possible.  You can run `mvn` build commands in the `maven2` folder.
+
 The artifacts of this project are not available on Maven Central (I deploy them to my company's repo).
 
 ## Integration with Spring
