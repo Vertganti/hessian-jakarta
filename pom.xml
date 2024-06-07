@@ -95,8 +95,20 @@
   </dependencies>
   
   <scm>
-    <connection>scm:git:https://github.com/Vertganti/hessian-jakarta</connection>
     <url>https://github.com/Vertganti/hessian-jakarta</url>
+    <connection>scm:git:https://github.com/Vertganti/hessian-jakarta.git</connection>
   </scm>
+  
+  <distributionManagement>
+    <site>
+      <id>hessian-jakarta</id>
+      <url>scm:git:https://github.com/Vertganti/hessian-jakarta.git</url>
+    </site>
+    <repository>
+      <id>github</id>
+      <name>Github Packages</name>			
+      <url>https://maven.pkg.github.com/Vertganti/hessian-jakarta</url>
+    </repository>
+  </distributionManagement>
 </project>
 
