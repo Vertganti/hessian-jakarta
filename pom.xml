@@ -30,16 +30,16 @@
   </developers>
 
   <properties>
-    <maven.compiler.release>11</maven.compiler.release>
+    <maven.compiler.release>21</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
   <build>
-    <sourceDirectory>${project.basedir}/../src</sourceDirectory>
+    <sourceDirectory>${project.basedir}/src</sourceDirectory>
 
     <resources>
       <resource>
-        <directory>${project.basedir}/../src/META-INF</directory>
+        <directory>${project.basedir}/src/META-INF</directory>
         <targetPath>META-INF</targetPath>
       </resource>
     </resources>
@@ -49,22 +49,22 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.11.0</version>
+          <version>3.13.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>3.3.0</version>
+          <version>3.4.1</version>
           <configuration>
             <archive>
-              <manifestFile>${project.basedir}/../src/manifest</manifestFile>
+              <manifestFile>${project.basedir}/src/manifest</manifestFile>
             </archive>
           </configuration>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-source-plugin</artifactId>
-          <version>3.3.0</version>
+          <version>3.3.1</version>
           <executions>
             <execution>
               <id>attach-sources</id>
@@ -95,8 +95,8 @@
   </dependencies>
   
   <scm>
-    <connection>scm:git:https://github.com/pnavato/hessian-jakarta</connection>
-    <url>https://github.com/pnavato/hessian-jakarta</url>
+    <connection>scm:git:https://github.com/Vertganti/hessian-jakarta</connection>
+    <url>https://github.com/Vertganti/hessian-jakarta</url>
   </scm>
 </project>
 
