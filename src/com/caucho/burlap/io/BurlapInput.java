@@ -930,28 +930,28 @@ public class BurlapInput extends AbstractBurlapInput {
     {
       int value = parseInt();
       expectTag(TAG_BOOLEAN_END);
-      return new Boolean(value != 0);
+      return Boolean.valueOf(value != 0);
     }
     
     case TAG_INT:
     {
       int value = parseInt();
       expectTag(TAG_INT_END);
-      return new Integer(value);
+      return Integer.valueOf(value);
     }
     
     case TAG_LONG:
     {
       long value = parseLong();
       expectTag(TAG_LONG_END);
-      return new Long(value);
+      return Long.valueOf(value);
     }
     
     case TAG_DOUBLE:
     {
       double value = parseDouble();
       expectTag(TAG_DOUBLE_END);
-      return new Double(value);
+      return Double.valueOf(value);
     }
     
     case TAG_DATE:
@@ -1237,7 +1237,7 @@ public class BurlapInput extends AbstractBurlapInput {
 
     _peek = ch;
     
-    return new Double(_sbuf.toString()).doubleValue();
+    return Double.valueOf(_sbuf.toString()).doubleValue();
   }
 
   /**
@@ -1760,33 +1760,33 @@ public class BurlapInput extends AbstractBurlapInput {
 
   static {
     _tagMap = new HashMap();
-    _tagMap.put("null", new Integer(TAG_NULL));
+    _tagMap.put("null", Integer.valueOf(TAG_NULL));
     
-    _tagMap.put("boolean", new Integer(TAG_BOOLEAN));
-    _tagMap.put("int", new Integer(TAG_INT));
-    _tagMap.put("long", new Integer(TAG_LONG));
-    _tagMap.put("double", new Integer(TAG_DOUBLE));
+    _tagMap.put("boolean", Integer.valueOf(TAG_BOOLEAN));
+    _tagMap.put("int", Integer.valueOf(TAG_INT));
+    _tagMap.put("long", Integer.valueOf(TAG_LONG));
+    _tagMap.put("double", Integer.valueOf(TAG_DOUBLE));
     
-    _tagMap.put("date", new Integer(TAG_DATE));
+    _tagMap.put("date", Integer.valueOf(TAG_DATE));
     
-    _tagMap.put("string", new Integer(TAG_STRING));
-    _tagMap.put("xml", new Integer(TAG_XML));
-    _tagMap.put("base64", new Integer(TAG_BASE64));
+    _tagMap.put("string", Integer.valueOf(TAG_STRING));
+    _tagMap.put("xml", Integer.valueOf(TAG_XML));
+    _tagMap.put("base64", Integer.valueOf(TAG_BASE64));
     
-    _tagMap.put("map", new Integer(TAG_MAP));
-    _tagMap.put("list", new Integer(TAG_LIST));
+    _tagMap.put("map", Integer.valueOf(TAG_MAP));
+    _tagMap.put("list", Integer.valueOf(TAG_LIST));
     
-    _tagMap.put("type", new Integer(TAG_TYPE));
-    _tagMap.put("length", new Integer(TAG_LENGTH));
+    _tagMap.put("type", Integer.valueOf(TAG_TYPE));
+    _tagMap.put("length", Integer.valueOf(TAG_LENGTH));
     
-    _tagMap.put("ref", new Integer(TAG_REF));
-    _tagMap.put("remote", new Integer(TAG_REMOTE));
+    _tagMap.put("ref", Integer.valueOf(TAG_REF));
+    _tagMap.put("remote", Integer.valueOf(TAG_REMOTE));
     
-    _tagMap.put("burlap:call", new Integer(TAG_CALL));
-    _tagMap.put("burlap:reply", new Integer(TAG_REPLY));
-    _tagMap.put("fault", new Integer(TAG_FAULT));
-    _tagMap.put("method", new Integer(TAG_METHOD));
-    _tagMap.put("header", new Integer(TAG_HEADER));
+    _tagMap.put("burlap:call", Integer.valueOf(TAG_CALL));
+    _tagMap.put("burlap:reply", Integer.valueOf(TAG_REPLY));
+    _tagMap.put("fault", Integer.valueOf(TAG_FAULT));
+    _tagMap.put("method", Integer.valueOf(TAG_METHOD));
+    _tagMap.put("header", Integer.valueOf(TAG_HEADER));
   }
   
   static {

@@ -99,21 +99,21 @@ public class BurlapProxy implements InvocationHandler {
     throws Throwable
   {
     String methodName = method.getName();
-    Class []params = method.getParameterTypes();
+    Class<?>[] params = method.getParameterTypes();
 
     // equals and hashCode are special cased
     if (methodName.equals("equals") &&
         params.length == 1 && params[0].equals(Object.class)) {
       Object value = args[0];
       if (value == null || ! Proxy.isProxyClass(value.getClass()))
-        return new Boolean(false);
+        return Boolean.valueOf(false);
 
       BurlapProxy handler = (BurlapProxy) Proxy.getInvocationHandler(value);
 
-      return new Boolean(_url.equals(handler.getURL()));
+      return Boolean.valueOf(_url.equals(handler.getURL()));
     }
     else if (methodName.equals("hashCode") && params.length == 0)
-      return new Integer(_url.hashCode());
+      return Integer.valueOf(_url.hashCode());
     else if (methodName.equals("getBurlapType"))
       return proxy.getClass().getInterfaces()[0].getName();
     else if (methodName.equals("getBurlapURL"))

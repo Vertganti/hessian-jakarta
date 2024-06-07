@@ -169,6 +169,7 @@ abstract public class AbstractHessianOutput {
    *
    * @deprecated
    */
+  @Deprecated
   public void writeHeader(String name)
     throws IOException
   {

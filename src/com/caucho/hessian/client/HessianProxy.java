@@ -140,10 +140,10 @@ public class HessianProxy implements InvocationHandler, Serializable {
 
         HessianProxy handler = (HessianProxy) proxyHandler;
 
-        return new Boolean(_url.equals(handler.getURL()));
+        return Boolean.valueOf(_url.equals(handler.getURL()));
       }
       else if (methodName.equals("hashCode") && params.length == 0)
-        return new Integer(_url.hashCode());
+        return Integer.valueOf(_url.hashCode());
       else if (methodName.equals("getHessianType"))
         return proxy.getClass().getInterfaces()[0].getName();
       else if (methodName.equals("getHessianURL"))

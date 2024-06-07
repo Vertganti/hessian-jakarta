@@ -412,17 +412,17 @@ public class MicroBurlapInput {
     else if (tag.equals("boolean")) {
       int value = parseInt();
       expectEndTag("boolean");
-      return new Boolean(value != 0);
+      return Boolean.valueOf(value != 0);
     }
     else if (tag.equals("int")) {
       int value = parseInt();
       expectEndTag("int");
-      return new Integer(value);
+      return Integer.valueOf(value);
     }
     else if (tag.equals("long")) {
       long value = parseLong();
       expectEndTag("long");
-      return new Long(value);
+      return Long.valueOf(value);
     }
     else if (tag.equals("string")) {
       sbuf.setLength(0);

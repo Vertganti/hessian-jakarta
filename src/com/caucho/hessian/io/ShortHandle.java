@@ -73,7 +73,7 @@ public class ShortHandle implements Serializable {
 
   public Object readResolve()
   {
-    return new Short(_value);
+    return Short.valueOf(_value);
   }
 
   public String toString()

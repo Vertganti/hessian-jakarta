@@ -217,6 +217,7 @@ public class ServiceContext {
    *
    * @deprecated
    */
+  @Deprecated
   public static ServletRequest getRequest()
   {
     ServiceContext context = (ServiceContext) _localContext.get();
@@ -232,6 +233,7 @@ public class ServiceContext {
    *
    * @deprecated
    */
+  @Deprecated
   public static String getServiceName()
   {
     ServiceContext context = (ServiceContext) _localContext.get();
@@ -247,6 +249,7 @@ public class ServiceContext {
    *
    * @deprecated
    */
+  @Deprecated
   public static String getObjectId()
   {
     ServiceContext context = (ServiceContext) _localContext.get();

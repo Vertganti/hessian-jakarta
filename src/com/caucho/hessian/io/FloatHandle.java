@@ -73,7 +73,7 @@ public class FloatHandle implements Serializable {
 
   public Object readResolve()
   {
-    return new Float(_value);
+    return Float.valueOf(_value);
   }
 
   public String toString()

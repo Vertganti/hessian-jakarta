@@ -131,6 +131,7 @@ public class GenericService implements Service {
    *
    * @deprecated
    */
+  @Deprecated
   public String getServiceId()
   {
     return getServiceName();

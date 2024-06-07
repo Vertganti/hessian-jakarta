@@ -73,7 +73,7 @@ public class ByteHandle implements Serializable {
 
   public Object readResolve()
   {
-    return new Byte(_value);
+    return Byte.valueOf(_value);
   }
 
   public String toString()

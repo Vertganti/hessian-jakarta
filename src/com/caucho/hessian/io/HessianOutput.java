@@ -812,7 +812,7 @@ public class HessianOutput extends AbstractHessianOutput {
       return true;
     }
     else {
-      _refs.put(object, new Integer(_refs.size()));
+      _refs.put(object, Integer.valueOf(_refs.size()));
       
       return false;
     }

@@ -323,10 +323,10 @@ public class MicroHessianInput {
       return null;
       
     case 'T':
-      return new Boolean(true);
+      return Boolean.valueOf(true);
       
     case 'F':
-      return new Boolean(false);
+      return Boolean.valueOf(false);
       
     case 'I': {
       int b32 = is.read();
@@ -334,7 +334,7 @@ public class MicroHessianInput {
       int b16 = is.read();
       int b8 = is.read();
 
-      return new Integer((b32 << 24) + (b24 << 16) + (b16 << 8) + b8);
+      return Integer.valueOf((b32 << 24) + (b24 << 16) + (b16 << 8) + b8);
     }
     
     case 'L': {
@@ -347,7 +347,7 @@ public class MicroHessianInput {
       long b16 = is.read();
       long b8 = is.read();
 
-      return new Long((b64 << 56) +
+      return Long.valueOf((b64 << 56) +
                       (b56 << 48) +
                       (b48 << 40) +
                       (b40 << 32) +
